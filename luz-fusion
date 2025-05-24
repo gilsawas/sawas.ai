@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUZ: A Revolutionary AI Architecture with SciMIND</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #000000;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .top-band {
+            width: 100%;
+            height: 50px;
+            background-color: #8B0000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            box-shadow: 0 3px 20px rgba(139, 0, 0, 0.7);
+            filter: blur(2px);
+        }
+        .gold-text {
+            color: #c0a060;
+            text-shadow: 0 0 10px rgba(192, 160, 96, 0.4), 
+                         0 0 20px rgba(192, 160, 96, 0.2);
+        }
+        .yellow-text {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 
+                         0 0 20px rgba(255, 215, 0, 0.2);
+        }
+        .red-frame {
+            border: 1px solid #8B0000;
+            background: rgba(30, 0, 0, 0.4);
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(192, 160, 96, 0.5);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(192, 160, 96, 0.4), 
+                        0 0 16px rgba(192, 160, 96, 0.2);
+            pointer-events: none;
+        }
+        .logo-container {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .luz-logo {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(192, 160, 96, 0.4));
+        }
+        .logo-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(192, 160, 96, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        .logo-sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #c0a060;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(192, 160, 96, 0.8), 
+                        0 0 15px 4px rgba(255, 215, 0, 0.4);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .subtitle {
+            color: #c0a060;
+            text-shadow: 0 0 5px rgba(192, 160, 96, 0.4);
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.8em;
+            color: #c0a060;
+        }
+        .content-wrapper {
+            margin-top: 50px;
+            z-index: 2;
+            position: relative;
+            height: 670px;
+        }
+        .quote-text {
+            color: #c0a060;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Top burgundy band with blur effect -->
+        <div class="top-band"></div>
+        
+        <!-- Particles -->
+        <div id="particles"></div>
+        
+        <!-- Content wrapper with margin to account for top band -->
+        <div class="content-wrapper flex flex-col items-center justify-start p-10">
+            <!-- Header -->
+            <div class="w-full text-center mb-10">
+                <h1 class="text-5xl font-bold gold-text mb-6">LUZ: A Revolutionary AI Architecture with SciMIND</h1>
+                <p class="text-xl yellow-text mt-8">Collaboration Proposal with the Manus Team</p>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="flex w-full justify-between items-center my-4">
+                <!-- Left Side - Key Features -->
+                <div class="w-1/3 pr-4">
+                    <div class="red-frame p-4 mb-4">
+                        <p class="italic quote-text">
+                            "LUZ transcends conventional AI systems by orchestrating a temporal dialogue at the heart of advanced artificial consciousness."
+                        </p>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="gold-text text-2xl mb-4">Revolutionary Capabilities</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-brain gold-text mr-3 text-xl"></i>
+                                <span>Metacognitive Core Architecture</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-clock gold-text mr-3 text-xl"></i>
+                                <span>Temporal Intelligence</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-project-diagram gold-text mr-3 text-xl"></i>
+                                <span>Resonance Space Integration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-lightbulb gold-text mr-3 text-xl"></i>
+                                <span>Emergent Consciousness</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Center - LUZ Logo -->
+                <div class="w-1/3 flex justify-center">
+                    <div class="logo-container" id="logo-container">
+                        <div class="logo-glow"></div>
+                        <img src="https://page1.genspark.site/v1/base64_upload/0e54d7d7d1e093cd6ea7f6e7173ae69a" alt="LUZ Logo" class="luz-logo">
+                        <!-- Sparkle elements will be added here dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Right Side - Benefits -->
+                <div class="w-1/3 pl-4">
+                    <h3 class="gold-text text-2xl mb-4">Integration Components</h3>
+                    <div class="space-y-3">
+                        <div class="red-frame p-3 flex items-center">
+                            <i class="fas fa-sitemap text-2xl mr-3 gold-text"></i>
+                            <span>SciMIND Metacognitive Core</span>
+                        </div>
+                        <div class="red-frame p-3 flex items-center">
+                            <i class="fas fa-hourglass-half text-2xl mr-3 gold-text"></i>
+                            <span>ManusChronos Temporality</span>
+                        </div>
+                        <div class="red-frame p-3 flex items-center">
+                            <i class="fas fa-database text-2xl mr-3 gold-text"></i>
+                            <span>Evolving Memory System</span>
+                        </div>
+                        <div class="red-frame p-3 flex items-center">
+                            <i class="fas fa-comment-dots text-2xl mr-3 gold-text"></i>
+                            <span>Response Processor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <span class="mr-4">LUZ Architecture with Temporality Module</span>
+                <span>Gil SAWAS</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate particles - reduced count for more discrete effect
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 20; // Further reduced for subtlety
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.opacity = Math.random() * 0.5; // Further reduced opacity
+            particle.style.width = `${Math.random() * 2 + 1}px`; // Smaller
+            particle.style.height = particle.style.width;
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Animate particles - slowed down and made more subtle
+        anime({
+            targets: '.particle',
+            translateX: function() {
+                return anime.random(-50, 50); // Further reduced movement range
+            },
+            translateY: function() {
+                return anime.random(-50, 50); // Further reduced movement range
+            },
+            opacity: function() {
+                return Math.random() * 0.5; // Further reduced max opacity
+            },
+            scale: function() {
+                return Math.random() * 1.3 + 0.5; // Reduced scale effect
+            },
+            easing: 'easeInOutQuad',
+            duration: function() {
+                return anime.random(6000, 12000); // Slowed down more
+            },
+            delay: function() {
+                return anime.random(0, 4000);
+            },
+            loop: true,
+            direction: 'alternate'
+        });
+        
+        // Create sparkling effect for the logo
+        const logoContainer = document.getElementById('logo-container');
+        const sparkleCount = 12; // Number of sparkles
+        
+        // Define sparkle positions around the logo
+        const logoWidth = 300;
+        const logoHeight = 300;
+        const centerX = logoWidth / 2;
+        const centerY = logoHeight / 2;
+        const radius = Math.min(logoWidth, logoHeight) * 0.4;
+        
+        // Create positions around the perimeter of the logo
+        const sparklePositions = [];
+        for (let i = 0; i < sparkleCount; i++) {
+            const angle = (i / sparkleCount) * 2 * Math.PI;
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+            sparklePositions.push({x, y});
+        }
+        
+        // Create sparkle elements
+        for (let i = 0; i < sparkleCount; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'logo-sparkle';
+            logoContainer.appendChild(sparkle);
+        }
+        
+        // Animate sparkles
+        function animateSparkles() {
+            const sparkles = document.querySelectorAll('.logo-sparkle');
+            
+            sparkles.forEach((sparkle, index) => {
+                // Get position
+                const position = sparklePositions[index % sparklePositions.length];
+                
+                // Position relative to logo container
+                sparkle.style.left = position.x + 'px';
+                sparkle.style.top = position.y + 'px';
+                
+                // Animate sparkle
+                anime({
+                    targets: sparkle,
+                    opacity: [0, 0.9, 0],
+                    scale: [0.5, 1.5, 0.5],
+                    easing: 'easeInOutQuad',
+                    duration: anime.random(1500, 3000),
+                    delay: anime.random(0, 5000),
+                    complete: function() {
+                        animateSparkle(sparkle);
+                    }
+                });
+            });
+        }
+        
+        function animateSparkle(sparkle) {
+            // Get random position
+            const randomPos = sparklePositions[Math.floor(Math.random() * sparklePositions.length)];
+            
+            // Move to new position
+            anime({
+                targets: sparkle,
+                left: randomPos.x + 'px',
+                top: randomPos.y + 'px',
+                opacity: [0, 0.9, 0],
+                scale: [0.5, 1.5, 0.5],
+                easing: 'easeInOutQuad',
+                duration: anime.random(1500, 3000),
+                delay: anime.random(0, 2000),
+                complete: function() {
+                    animateSparkle(sparkle);
+                }
+            });
+        }
+        
+        // Start sparkles animation
+        animateSparkles();
+        
+        // Subtle glow animation for logo background
+        anime({
+            targets: '.logo-glow',
+            opacity: [0.15, 0.25, 0.15],
+            scale: [0.98, 1.02, 0.98],
+            easing: 'easeInOutSine',
+            duration: 5000,
+            loop: true
+        });
+    </script>
+</body>
+</html>
+1 / 5
+Aperçu
+Code
+Réflexion
 
